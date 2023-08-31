@@ -1,0 +1,126 @@
+.indexNews {
+  @include pad {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: end;
+    height: 196px;
+  }
+}
+
+.indexStudio {
+  @include pad {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 196px;
+  }
+}
+
+.linearGradientRight {
+  background: linear-gradient(to right, #7000FF, #11002D);
+}
+
+
+.indexCarouselBg {
+  background: url('/assets/images/carousel_background.png'), radial-gradient(circle at center,#300871,#000);
+  background-size: 948px 1089px, 100% 100%;
+  background-position: bottom left, center center;
+  background-repeat: no-repeat;
+  height: 1089px;
+}
+
+.fullLine::before {
+  width: 110%;
+  height: 1px;
+  content: "";
+  position: absolute;
+  background: white;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+.carousel-control-prev {
+  background: none;
+  position: static;
+  margin-right: 52px;
+}
+
+.carousel-control-next {
+  background: none;
+  position: static;
+  margin-left: 52px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  display: inline-block;
+  width: 180px;
+  height: 48px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100% 100%;
+}
+
+.indexNewsBg {
+  background: radial-gradient(circle at center,#28085C,#000);
+  background-size: cover;
+  background-position:center center;
+}
+
+.indexShareBg {
+  background: radial-gradient(circle at center,#000,#28085C);
+  background-size: cover;
+  background-position:center center;
+}
+
+
+.share {
+  .share-swiper {
+    .swiper-wrapper {
+      height: 416px;
+    }
+  }
+  .swiper-scrollbar {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  .swiper-scrollbar-drag {
+    background: #ffffff !important;
+  }
+}
+
+.share {
+  &-card {
+    padding: 24px;
+    background-color: #380c7e;
+    color: #ffffff;
+    min-height: 351px;
+    min-width: 351px;
+
+    @include pad {
+      padding: 40px;
+      max-height: 416px;
+      max-width: 416px;
+    }
+  }
+}
+
+.lineEllipse {
+    width: 124px;
+    height: 12px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.indexContactBtn {
+  width: 351px;
+  @include pad {
+    width: 416px;
+  }
+}
+
+.aiIntroCardContent {
+  background-color: #000;
+  transition: 0.5s;
+  &:hover {
+    background-color: #00000080;
+  }
+}

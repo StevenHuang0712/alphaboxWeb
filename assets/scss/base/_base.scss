@@ -1,0 +1,39 @@
+body {
+    font-weight: bold;
+}
+
+a {
+    display: block;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+ol, ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+header {
+    font-weight: 500 !important;
+}
+
+
+.sans {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.saira {
+    font-family: 'Saira Extra Condensed', sans-serif;
+}
+
+.shrikhand {
+    font-family: 'Shrikhand', cursive;
+}
+
+.letter-spacing {
+    letter-spacing: 1em;
+}
