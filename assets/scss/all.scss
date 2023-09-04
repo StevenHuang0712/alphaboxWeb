@@ -1,5 +1,6 @@
 @import "../../node_modules/bootstrap/scss/functions";
 @import './utils/variables';
+@import './utils/custom-color';
 @import "./utils/utilities";
 
 
@@ -7,13 +8,15 @@
 @import "../../node_modules/bootstrap/scss/utilities/api";
 
 
+@import './mixins/breakpoints';
+@import './mixins/bg-gradient';
 @import './base/base';
-@import './utils/breakpoints';
+@import './utils/animation';
 
 
 @import './layout/header.scss';
-@import './layout/footer.scss';
 
 
 @import './pages/index.scss';
+@import './pages/news.scss';
 

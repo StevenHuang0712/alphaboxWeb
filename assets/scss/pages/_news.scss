@@ -1,0 +1,21 @@
+.newsImg {
+    width: 301px;
+    height: 108px;
+
+    @include pad {
+        width: 196px;
+        height: 226px;
+    }
+}
+
+.newsDetailImg {
+    height: 506px;
+
+    @include pad {
+        height: 600px;
+    }
+}
+
+.pagination .active a {
+    text-decoration: underline;
+}

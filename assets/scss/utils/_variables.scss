@@ -310,7 +310,7 @@ $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
-$dark:          #000 !default;
+$dark:          $black !default;
 
 
 // scss-docs-end theme-color-variables
@@ -345,7 +345,7 @@ $escaped-characters: (
 $enable-caret:                true !default;
 $enable-rounded:              true !default;
 $enable-shadows:              false !default;
-$enable-gradients:            true !default;
+$enable-gradients:            false !default;
 $enable-transitions:          true !default;
 $enable-reduced-motion:       true !default;
 $enable-smooth-scroll:        true !default;
@@ -369,9 +369,8 @@ $prefix:                      $variable-prefix !default;
 // The gradient which is added to components if `$enable-gradients` is `true`
 // This gradient is also added to elements with `.bg-gradient`
 // scss-docs-start variable-gradient
-// $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
-$linear-bottom-gradient: linear-gradient(to bottom, #7000FF, #11002D) !default;
-// $linear-right-gradient: linear-gradient(to right, #7000FF, #11002D) !default;
+$gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
+
 // scss-docs-end variable-gradient
 
 // Spacing
@@ -403,10 +402,14 @@ $spacers: (
   19: $spacer * 4.75, // 76
   20: $spacer * 5,    // 80
   24: $spacer * 6,    // 96
+  26: $spacer * 6.5,  // 104
   30: $spacer * 7.5,  // 120
+  32: $spacer * 8,    // 128
   34: $spacer * 8.5,  // 136
+  35: $spacer * 8.75, // 140
   36: $spacer * 9,    // 144
-  40: $spacer * 10    // 160
+  40: $spacer * 10,   // 160
+  60: $spacer * 15    // 240
 ) !default;
 // scss-docs-end spacer-variables-maps
 
@@ -427,8 +430,8 @@ $position-values: (
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:             $white !default;
-// $body-color:                $gray-900 !default;
+$body-color:                $white !default;
+// $body-color:             $gray-900 !default;
 $body-text-align:           null !default;
 
 // Links
@@ -589,7 +592,8 @@ $font-weight-normal:          400 !default;
 $font-weight-medium:          500 !default;
 $font-weight-semibold:        600 !default;
 $font-weight-bold:            700 !default;
-$font-weight-bolder:          bolder !default;
+$font-weight-bolder:          900 !default;
+// $font-weight-bolder:          bolder !default;
 
 $font-weight-base:            $font-weight-normal !default;
 
@@ -630,14 +634,10 @@ $font-size-400:               $font-size-base * 25;
 
 // scss-docs-start font-sizes
 $font-sizes: (
-  1: $font-size-4,  //4
-  2: $font-size-8,  //8
-  3: $font-size-12, //12
-  4: $font-size-16, //16
-  // 5: $h5-font-size,
-  // 6: $h6-font-size,
-
-  
+  1: $font-size-4, 
+  2: $font-size-8,
+  3: $font-size-12,
+  4: $font-size-16,
   5: $font-size-20,
   6: $font-size-24,
   8: $font-size-32,
@@ -1254,7 +1254,8 @@ $dropdown-dark-header-color:        $gray-500 !default;
 
 // scss-docs-start pagination-variables
 $pagination-padding-y:              .375rem !default;
-$pagination-padding-x:              .75rem !default;
+$pagination-padding-x:              1rem !default;
+// $pagination-padding-x:              .75rem !default;
 $pagination-padding-y-sm:           .25rem !default;
 $pagination-padding-x-sm:           .5rem !default;
 $pagination-padding-y-lg:           .75rem !default;
@@ -1263,23 +1264,30 @@ $pagination-padding-x-lg:           1.5rem !default;
 $pagination-font-size:              $font-size-base !default;
 
 $pagination-color:                  var(--#{$prefix}link-color) !default;
-$pagination-bg:                     $white !default;
-$pagination-border-radius:          $border-radius !default;
-$pagination-border-width:           $border-width !default;
+// $pagination-bg:                     $white !default;
+// $pagination-border-radius:          $border-radius !default;
+// $pagination-border-width:           $border-width !default;
+$pagination-bg:                     transparent !default;
+$pagination-border-radius:          none !default;
+$pagination-border-width:           0 !default;
 $pagination-margin-start:           ($pagination-border-width * -1) !default;
 $pagination-border-color:           $gray-300 !default;
 
 $pagination-focus-color:            var(--#{$prefix}link-hover-color) !default;
-$pagination-focus-bg:               $gray-200 !default;
+// $pagination-focus-bg:               $gray-200 !default;
+$pagination-focus-bg:               transparent !default;
 $pagination-focus-box-shadow:       $input-btn-focus-box-shadow !default;
 $pagination-focus-outline:          0 !default;
 
+// $pagination-hover-color:            var(--#{$prefix}link-hover-color) !default;
 $pagination-hover-color:            var(--#{$prefix}link-hover-color) !default;
-$pagination-hover-bg:               $gray-200 !default;
+$pagination-hover-bg:               none !default;
+// $pagination-hover-bg:               $gray-200 !default;
 $pagination-hover-border-color:     $gray-300 !default;
 
 $pagination-active-color:           $component-active-color !default;
-$pagination-active-bg:              $component-active-bg !default;
+$pagination-active-bg:              none !default;
+// $pagination-active-bg:              $component-active-bg !default;
 $pagination-active-border-color:    $pagination-active-bg !default;
 
 $pagination-disabled-color:         $gray-600 !default;
@@ -1638,8 +1646,8 @@ $carousel-control-icon-width:        2rem !default;
 
 // $carousel-control-prev-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>") !default;
 // $carousel-control-next-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>") !default;
-$carousel-control-prev-icon-bg:      url("../assets/images/line_start_arrow_notch.png") !default;
-$carousel-control-next-icon-bg:      url("../assets/images/line_end_arrow_notch.png") !default;
+$carousel-control-prev-icon-bg:      url("../images/line_start_arrow_notch.png") !default;
+$carousel-control-next-icon-bg:      url("../images/line_end_arrow_notch.png") !default;
 
 $carousel-transition-duration:       .6s !default;
 $carousel-transition:                transform $carousel-transition-duration ease-in-out !default; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)

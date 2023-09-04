@@ -16,39 +16,63 @@
   }
 }
 
+.indexHomeASideImg {
+  height: 351px;
+  object-fit: cover;
+  @include pad {
+    height: 676px;
+  }
+}
+
+.indexHomeCenterImg {
+  height: 351px;
+  object-fit: cover;
+  @include pad {
+    height: 580px;
+  }
+}
+
 .linearGradientRight {
-  background: linear-gradient(to right, #7000FF, #11002D);
+  @include gradient-x($primary-300, $primary-600);
+}
+
+.linearGradientLeft {
+  @include gradient-x($primary-600, $primary-300);
 }
 
 
-.indexCarouselBg {
-  background: url('/assets/images/carousel_background.png'), radial-gradient(circle at center,#300871,#000);
-  background-size: 948px 1089px, 100% 100%;
-  background-position: bottom left, center center;
+.indexHomeBg {
+  background: url('/assets/images/home_background.png'), url('/assets/images/carousel_background.png'), radial-gradient(circle at center,#300871,#000);
+  background-size: 100% 960px, 948px 1089px, 100% 100%;
+  background-position: top left, bottom left, center center;
   background-repeat: no-repeat;
-  height: 1089px;
 }
 
-.fullLine::before {
-  width: 110%;
-  height: 1px;
-  content: "";
-  position: absolute;
-  background: white;
-  transform: translate(-50%, -50%);
-  left: 50%;
+.indexFullLine {
+  border-bottom: 1px solid white;
+  margin: 0 -12px;
+
+  @include pad {
+    margin: 0 -80px;
+  }
 }
 
 .carousel-control-prev {
   background: none;
   position: static;
-  margin-right: 52px;
+
+  @include pad {
+    margin-right: 52px;
+  }
 }
 
 .carousel-control-next {
   background: none;
   position: static;
-  margin-left: 52px;
+
+  @include pad {
+    margin-left: 52px;
+  }
 }
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
@@ -60,18 +84,33 @@
   background-size: 100% 100%;
 }
 
-.indexNewsBg {
-  background: radial-gradient(circle at center,#28085C,#000);
-  background-size: cover;
-  background-position:center center;
+.carousel-inner {
+  height: 351px;
+
+  @include pad {
+    height: 560px;
+  }
 }
 
-.indexShareBg {
-  background: radial-gradient(circle at center,#000,#28085C);
-  background-size: cover;
-  background-position:center center;
+.carousel-item img {
+  height: 351px;
+  width: 351px;
+
+  @include pad {
+    height: 1296px;
+    height: 560px;
+  }
 }
 
+.card-body {
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  @include pad {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
 
 .share {
   .share-swiper {
