@@ -2,13 +2,6 @@ body {
     font-weight: bold;
 }
 
-a {
-    display: block;
-    &:hover {
-        opacity: 0.7;
-    }
-}
-
 img {
     max-width: 100%;
     object-fit: cover;
@@ -20,6 +13,11 @@ ol, ul {
     margin-bottom: 0;
 }
 
+header a, footer a {
+    &:hover {
+        opacity: .7;
+    }
+}
 
 .sans {
     font-family: 'Noto Sans TC', sans-serif;
@@ -43,4 +41,12 @@ ol, ul {
 
 .secRadialGradientBg {
     @include radial-gradient(#000000, #28085c);
+}
+
+.zoomInHover {
+    transform: scale(1,1);
+    transition: all .5s ease-out;
+    &:hover {
+        transform: scale(1.2,1.2);
+    }
 }
