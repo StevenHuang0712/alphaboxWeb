@@ -1,3 +1,3 @@
-# W8 - AI 虛擬陪伴
+# 切版 - AI 虛擬陪伴
 
-[首頁](https://stevenhuang0712.github.io/alphaboxWeb/index.html)
+[首頁](https://ming77712.github.io/alphaboxWeb/)
